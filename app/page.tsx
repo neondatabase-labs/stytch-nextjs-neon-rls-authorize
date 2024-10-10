@@ -4,7 +4,7 @@ import { AddTodoForm } from "@/app/add-todo";
 import { Header } from "@/app/header";
 import { TodoList } from "@/app/todo-list";
 import { useStytchUser } from "@stytch/nextjs";
-import { StychLogin } from "@/app/components/stytch-login";
+import { StytchLogin } from "@/app/components/stytch-login";
 import { TodosProvider } from "@/app/todos-provider";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -38,7 +38,7 @@ export default function Home() {
   } else {
     content = (
       <center style={{ marginTop: 20 }}>
-        <StychLogin />
+        <StytchLogin />
       </center>
     );
   }

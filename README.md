@@ -1,10 +1,10 @@
 # Neon Authorize + Stytch Example (SQL from the Backend)
 
-This repository is a guided getting started example for Neon Authorize + Stych.
+This repository is a guided getting started example for Neon Authorize + Stytch.
 
 1. Create a Neon project
-2. Create a Stych project
-3. In the "Frontend SDKs" page, make sure to add "http://localhost:3000" to the "Domains" in your test environment
+2. Create a Stytch project (choose type: `Consumer`)
+3. In the "Frontend SDKs" page, make sure to enable the SDK
 4. Head to the Neon Console, and find "Authorize"
 5. Inside Authorize, click "Add Authentication Provider", and under JWKS URL paste in `https://test.stytch.com/v1/sessions/jwks/:project_id` (substitute your project ID in `:project_id`)
 6. Clone this repository and run `npm install` or `bun install`
