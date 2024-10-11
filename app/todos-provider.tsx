@@ -3,15 +3,7 @@
 import { getTodos } from "@/app/actions";
 import { useStytch, useStytchUser } from "@stytch/nextjs";
 import { createContext, useEffect, useState } from "react";
-
-// TODO: Import this type from Drizzle once Drizzle works on the browser
-export type Todo = {
-  id: BigInt;
-  userId: string;
-  task: string;
-  isComplete: boolean;
-  insertedAt: Date;
-};
+import { Todo } from "@/app/schema";
 
 export const TodosContext = createContext<{
   todos: Array<Todo> | null;
@@ -40,9 +32,9 @@ export function TodosProvider({ children }: { children: React.ReactNode }) {
 
     const { session_jwt: authToken } = tokens;
 
-    getTodos({ authToken, userId: user.user_id }).then((todos) =>
-      setTodos(todos),
-    );
+    getTodos({ authToken, userId: user.user_id }).then((todos) => {
+      setTodos(todos);
+    });
   }, [user, getTodos]);
 
   if (user === null) {
