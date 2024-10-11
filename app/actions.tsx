@@ -4,7 +4,6 @@ import * as schema from "@/app/schema";
 import { Todo } from "@/app/schema";
 import { neon } from "@neondatabase/serverless";
 import { eq } from "drizzle-orm";
-import { revalidatePath } from "next/cache";
 import { drizzle } from "drizzle-orm/neon-http";
 
 function getDb(authToken: string) {
@@ -28,6 +27,7 @@ export async function insertTodo({
       isComplete: false,
     })
     .returning();
+
   return insertedTodo;
 }
 
