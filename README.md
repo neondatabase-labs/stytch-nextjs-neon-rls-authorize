@@ -24,7 +24,8 @@ NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN="YOUR_STYTCH_PUBLIC_TOKEN"
 STYTCH_SECRET="YOUR_STYTCH_SECRET"
 ```
 
-9. Run `npm run drizzle:migrate` or `bun run drizzle:migrate` to apply the migrations
-10. Run `npm run dev` or `bun run dev`
-11. Open your browser and go to `http://localhost:3000`
-12. Login and play around!
+9. Run `npm run drizzle:generate` or `bun run drizzle:generate` to generate the migrations
+10. Run `npm run drizzle:migrate` or `bun run drizzle:migrate` to apply the migrations
+11. Run `npm run dev` or `bun run dev`
+12. Open your browser and go to `http://localhost:3000`
+13. Login and play around!
