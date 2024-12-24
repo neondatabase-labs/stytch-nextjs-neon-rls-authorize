@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useStytchUser, useStytch } from "@stytch/nextjs";
@@ -15,7 +16,7 @@ const MAGIC_LINKS_TOKEN = "magic_links";
  *
  * On successful authentication, a session will be created and the user will be redirect to /.
  */
-const Authenticate = () => {
+const AuthenticateContent = () => {
   const { user, isInitialized } = useStytchUser();
   const stytch = useStytch();
   const router = useRouter();
@@ -44,6 +45,14 @@ const Authenticate = () => {
   }, [router, user, isInitialized]);
 
   return null;
+};
+
+const Authenticate = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AuthenticateContent />
+    </Suspense>
+  );
 };
 
 export default Authenticate;
