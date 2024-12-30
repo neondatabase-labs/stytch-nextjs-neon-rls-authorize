@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: stytch-neon-authorize
+    runtime: node
+    plan: free
+    # Set NODE_ENV=development for build command since Render needs devDependencies to build Next.js (https://community.render.com/t/nextjs-deployment-fails-unless-devdependencies-moved-to-dependencies-in-package-json/26748)
+    buildCommand: NODE_ENV=development npm install && npm run build
+    startCommand: npm run start
+    autoDeploy: false
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+      - key: DATABASE_URL
+        sync: false # Securely configure the database URL in Render Dashboard
+
+      - key: DATABASE_AUTHENTICATED_URL
+        sync: false # Securely configure the authenticated database URL in Render Dashboard
+
+      - key: STYTCH_PROJECT_ENV
+        sync: false # Configure Stytch project environment in Render Dashboard
+
+      - key: STYTCH_PROJECT_ID
+        sync: false # Securely configure Stytch Project ID in Render Dashboard
+
+      - key: NEXT_PUBLIC_STYTCH_PUBLIC_TOKEN
+        sync: false # Configure Stytch Public Token in Render Dashboard
+
+      - key: STYTCH_SECRET
+        sync: false # Securely configure Stytch Secret Key in Render Dashboard

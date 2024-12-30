@@ -19,7 +19,7 @@ export const getDomainFromWindow = () => {
  * This component accepts style, config, and callbacks props. To learn more about possible options review the documentation at
  * https://stytch.com/docs/sdks/javascript-sdk#ui-configs.
  */
-export const StytchLogin = () => {
+export const StytchLoginForm = () => {
   const config = {
     products: [Products.emailMagicLinks],
     emailMagicLinksOptions: {
