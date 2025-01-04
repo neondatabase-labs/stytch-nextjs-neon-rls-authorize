@@ -23,7 +23,7 @@
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.38.2",
     "mysql2": "^3.11.3",
-    "next": "^14.2.3",
+    "next": "^14.2.21",
     "postcss": "^8.4.33",
     "prettier": "^3.3.3",
     "prism-react-renderer": "^2.3.1",
